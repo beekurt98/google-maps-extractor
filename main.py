@@ -2,15 +2,16 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-URL = "https://maps.app.goo.gl/JagPjjA2QKbkvZ278"
+url = input("Please enter the URL of the editable map: ")
+user_name = input("Please enter the user name of the PC: ")
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True)
-options.add_argument("user-data-dir=C:\\Users\\bkurt\\AppData\\Local\\Google\\Chrome\\User Data")
+options.add_argument(f"user-data-dir=C:\\Users\\{user_name}\\AppData\\Local\\Google\\Chrome\\User Data")
 
 driver = webdriver.Chrome(options=options)
 
-driver.get(URL)
+driver.get(url)
 time.sleep(3)
 
 # title of the list
